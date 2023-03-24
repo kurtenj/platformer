@@ -201,8 +201,10 @@ function update() {
     requestAnimationFrame(update);
 }
 
+let modalShown = false;
+
 function checkCollectible() {
-    if (checkCollision(player, collectible)) {
+    if (checkCollision(player, collectible) && !modalShown) {
         collectible.collected = true;
         showModal();
     }
@@ -213,6 +215,7 @@ function showModal() {
     const successMessage = document.getElementById('successMessage');
     successMessage.textContent = getRandomSuccessMessage();
     modal.style.display = 'flex';
+    modalShown = true;
 }
 
 const playAgainBtn = document.getElementById('playAgain');

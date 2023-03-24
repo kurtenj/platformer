@@ -21,7 +21,7 @@ const player = {
     color: 'blue',
     vy: 0,
     gravity: 0.25,
-    jumpPower: 24,
+    jumpPower: 18,
     grounded: false,
     direction: 'right',
 };
@@ -32,8 +32,8 @@ function generateObstacles(numObstacles) {
 
     for (let i = 0; i < numObstacles; i++) {
         const x = 200 + i * minWidthBetweenObstacles + Math.random() * (canvas.width - 400 - (numObstacles - 1) * minWidthBetweenObstacles) / numObstacles;
-        const minHeight = 50;
-        const maxHeight = 200;
+        const minHeight = 75;
+        const maxHeight = 300;
         const height = minHeight + Math.random() * (maxHeight - minHeight);
 
         obstacles.push({ x: x, y: ground.y - height, width: 50, trunkWidth: 20, height: height, color: 'red' });

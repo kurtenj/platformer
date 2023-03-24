@@ -30,10 +30,10 @@ const successMessages = [
     'His seafood is so fresh it’ll slap ya.',
     'Shut the Front Door.',
     'We’re Riding the Bus to Flavortown!',
-    'Dude, I’ve been stricken by chicken!'
-    'What a hot frisbee of fun!'
-    'Some people are just born to cook and talk.'
-    'I can’t play the guitar, but I can play the griddle.'
+    'Dude, I’ve been stricken by chicken!',
+    'What a hot frisbee of fun!',
+    'Some people are just born to cook and talk.',
+    'I can’t play the guitar, but I can play the griddle.',
 ];
 
 function getRandomSuccessMessage() {

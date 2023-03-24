@@ -21,7 +21,7 @@ const player = {
     color: 'blue',
     vy: 0,
     gravity: 0.25,
-    jumpPower: 18,
+    jumpPower: 15,
     grounded: false,
     direction: 'right',
 };
@@ -31,7 +31,7 @@ function generateObstacles(numObstacles) {
     const minWidthBetweenObstacles = 100; // Set the minimum width between obstacles
 
     for (let i = 0; i < numObstacles; i++) {
-        const x = 200 + i * minWidthBetweenObstacles + Math.random() * (canvas.width - 400 - (numObstacles - 1) * minWidthBetweenObstacles) / numObstacles;
+        const x = 200 + i * minWidthBetweenObstacles + Math.random() * (canvas.width - 400 - (numObstacles - 2) * minWidthBetweenObstacles) / numObstacles;
         const minHeight = 75;
         const maxHeight = 300;
         const height = minHeight + Math.random() * (maxHeight - minHeight);

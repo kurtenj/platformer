@@ -26,6 +26,21 @@ const player = {
     direction: 'right',
 };
 
+const successMessages = [
+    'His seafood is so fresh it’ll slap ya.',
+    'Shut the Front Door.',
+    'We’re Riding the Bus to Flavortown!',
+    'Dude, I’ve been stricken by chicken!'
+    'What a hot frisbee of fun!'
+    'Some people are just born to cook and talk.'
+    'I can’t play the guitar, but I can play the griddle.'
+];
+
+function getRandomSuccessMessage() {
+    const index = Math.floor(Math.random() * successMessages.length);
+    return successMessages[index];
+}
+
 function generateObstacles(numObstacles) {
     const obstacles = [];
     const minWidthBetweenObstacles = 100; // Set the minimum width between obstacles
@@ -193,6 +208,8 @@ function checkCollectible() {
 
 function showModal() {
     const modal = document.getElementById('modal');
+    const successMessage = document.getElementById('successMessage');
+    successMessage.textContent = getRandomSuccessMessage();
     modal.style.display = 'flex';
 }
 

@@ -17,7 +17,7 @@ const player = {
     y: 200,
     width: 75,
     height: 75,
-    speed: 5,
+    speed: 4,
     color: 'blue',
     vy: 0,
     gravity: 0.25,

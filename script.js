@@ -15,13 +15,13 @@ const ground = {
 const player = {
     x: 100,
     y: 200,
-    width: 50,
-    height: 50,
-    speed: 5,
+    width: 75,
+    height: 75,
+    speed: 4,
     color: 'blue',
     vy: 0,
-    gravity: 0.5,
-    jumpPower: 12,
+    gravity: 0.25,
+    jumpPower: 24,
     grounded: false,
     direction: 'right',
 };
@@ -32,8 +32,8 @@ function generateObstacles(numObstacles) {
 
     for (let i = 0; i < numObstacles; i++) {
         const x = 200 + i * minWidthBetweenObstacles + Math.random() * (canvas.width - 400 - (numObstacles - 1) * minWidthBetweenObstacles) / numObstacles;
-        const minHeight = 30;
-        const maxHeight = 100;
+        const minHeight = 50;
+        const maxHeight = 200;
         const height = minHeight + Math.random() * (maxHeight - minHeight);
 
         obstacles.push({ x: x, y: ground.y - height, width: 50, trunkWidth: 20, height: height, color: 'red' });

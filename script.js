@@ -194,7 +194,9 @@ function update() {
     drawPlayer();
     drawObstacles();
     drawCollectible();
-    checkCollectible();
+    if (!collectible.collected) {
+        checkCollectible();
+    }
 
     requestAnimationFrame(update);
 }

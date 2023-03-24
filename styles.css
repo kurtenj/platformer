@@ -1,0 +1,74 @@
+html, body {
+    margin: 0 !important;
+    padding: 0;
+    overflow: hidden;
+}
+
+#gameContainer {
+    position: relative;
+    height: 100%; /* Add this line */
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px; /* Add rounded edges */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add slight shadow */
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    color: black;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.success-button {
+    background-color: red;
+    color: white;
+    font-size: 24px; /* Adjust the value to your desired text size */
+    padding: 10px 20px; /* Adjust the values for more or less padding */
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    border-radius: 5px; /* Optional: round button corners */
+  }
+  
+  .success-button:hover {
+    background-color: darkred;
+    color: white;
+  }  

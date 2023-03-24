@@ -17,7 +17,7 @@ const player = {
     y: 200,
     width: 75,
     height: 75,
-    speed: 4,
+    speed: 5,
     color: 'blue',
     vy: 0,
     gravity: 0.25,
@@ -147,36 +147,39 @@ function handleObstacleCollisions() {
 }
 
 function update() {
-    if (keys['ArrowLeft'] && player.x > 0) {
-        player.x -= player.speed;
-        player.direction = 'left';
-    }
-    if (keys['ArrowRight'] && player.x + player.width < canvas.width) {
-        player.x += player.speed;
-        player.direction = 'right';
-    }
+    const steps = 5; // Number of collision checks per update
+    for (let i = 0; i < steps; i++) {
+        if (keys['ArrowLeft'] && player.x > 0) {
+            player.x -= player.speed / steps;
+            player.direction = 'left';
+        }
+        if (keys['ArrowRight'] && player.x + player.width < canvas.width) {
+            player.x += player.speed / steps;
+            player.direction = 'right';
+        }
 
-    if (keys[' ']) {
-        jump();
+        if (keys[' ']) {
+            jump();
+        }
+
+        player.y += player.vy / steps;
+        player.vy += player.gravity / steps;
+
+        if (player.y >= ground.y - player.height) {
+            player.y = ground.y - player.height;
+            player.grounded = true;
+            player.vy = 0;
+        }
+
+        handleObstacleCollisions();
     }
-
-    player.y += player.vy;
-    player.vy += player.gravity;
-
-    if (player.y >= ground.y - player.height) {
-        player.y = ground.y - player.height;
-        player.grounded = true;
-        player.vy = 0;
-    }
-
-    handleObstacleCollisions();
 
     clearCanvas();
     drawGround();
     drawPlayer();
     drawObstacles();
-    drawCollectible(); // Move this line here
-    checkCollectible(); // Move this line here
+    drawCollectible();
+    checkCollectible();
 
     requestAnimationFrame(update);
 }

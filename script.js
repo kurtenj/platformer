@@ -31,8 +31,8 @@ function generateObstacles(numObstacles) {
     const minWidthBetweenObstacles = 100; // Set the minimum width between obstacles
 
     for (let i = 0; i < numObstacles; i++) {
-        const x = 200 + i * minWidthBetweenObstacles + Math.random() * (canvas.width - 400 - (numObstacles - 1) * minWidthBetweenObstacles) / numObstacles;
-        const minHeight = 75;
+        const x = 200 + i * minWidthBetweenObstacles + Math.random() * (canvas.width - 600 - (numObstacles - 1) * minWidthBetweenObstacles) / numObstacles;
+        const minHeight = 60;
         const maxHeight = 300;
         const height = minHeight + Math.random() * (maxHeight - minHeight);
 
@@ -41,7 +41,7 @@ function generateObstacles(numObstacles) {
     return obstacles;
 }
 
-const obstacles = generateObstacles(6);
+const obstacles = generateObstacles(5);
 
 const collectible = {
     x: 200 + Math.random() * (canvas.width - 400),
